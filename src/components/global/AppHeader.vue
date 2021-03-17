@@ -2,17 +2,21 @@
     <div class="header">
         <div class="logo">Elzero Vue</div>
         <ul>
-            <router-link to="/" tag="li" exact>
-                <a>Home</a>
-            </router-link>
-            |
-            <router-link to="/about" tag="li">
-                <a>About</a>
-            </router-link>
-            |
-            <router-link to="/help" tag="li" replace>
-                <a>Help</a>
-            </router-link>
+            <li>
+                <router-link to="/" exact>
+                    <a>Home</a>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/about" tag="li">
+                    <a>About</a>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/help" tag="li" replace>
+                    <a>Help</a>
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>
@@ -45,6 +49,10 @@ export default {
             a {
                 color: #fff;
                 text-decoration: none;
+
+                &:hover {
+                    color: #42b983;
+                }
             }
         }
     }
