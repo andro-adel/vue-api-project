@@ -3,26 +3,25 @@
         <h1>{{ pagename }}</h1>
         <p>{{ pagedescription }}</p>
         <div class="container">
-            <div
-                class="alert alert-warning alert-dismissible fade show"
-                role="alert"
-            >
-                <strong>Holy guacamole!</strong> You should check in on some of
-                those fields below.
-                <button
-                    type="button"
-                    class="close"
-                    data-dismiss="alert"
-                    aria-label="Close"
-                >
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-area">
+                        <post />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <sidebar />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import post from "@/components/blog/blogpost.vue";
+import sidebar from "@/components/blog/blogsidebar.vue";
 export default {
     data: function() {
         return {
@@ -30,6 +29,10 @@ export default {
             pagedescription: "This is blog us page"
         };
     },
-    name: "Blog"
+    name: "Blog",
+    components: {
+        post,
+        sidebar
+    }
 };
 </script>

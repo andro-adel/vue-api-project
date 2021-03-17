@@ -1,28 +1,30 @@
 <template>
     <div class="header">
-        <div class="logo">Elzero Vue</div>
-        <ul>
-            <li>
-                <router-link to="/" exact>
-                    <a>Home</a>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/blog">
-                    <a>Blog</a>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/about">
-                    <a>About</a>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/help" replace>
-                    <a>Help</a>
-                </router-link>
-            </li>
-        </ul>
+        <div class="container">
+            <div class="logo">Elzero Vue</div>
+            <ul class="text-right">
+                <li>
+                    <router-link to="/" exact>
+                        <a>Home</a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/blog">
+                        <a>Blog</a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/about">
+                        <a>About</a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/help" replace>
+                        <a>Help</a>
+                    </router-link>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
