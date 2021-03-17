@@ -8,12 +8,17 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/about" tag="li">
+                <router-link to="/blog">
+                    <a>Blog</a>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/about">
                     <a>About</a>
                 </router-link>
             </li>
             <li>
-                <router-link to="/help" tag="li" replace>
+                <router-link to="/help" replace>
                     <a>Help</a>
                 </router-link>
             </li>

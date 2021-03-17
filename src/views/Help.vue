@@ -1,17 +1,18 @@
 <template>
     <div class="our-help">
-        <h1>Help</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-            sapiente quaerat inventore temporibus aliquam excepturi
-            perspiciatis, hic quas possimus quia consectetur aliquid minus!
-            Voluptate, voluptatem! Iusto veritatis blanditiis beatae. Officia!
-        </p>
+        <h1>{{ pagename }}</h1>
+        <p>{{ pagedescription }}</p>
     </div>
 </template>
 
 <script>
 export default {
+    data: function() {
+        return {
+            pagename: "Help",
+            pagedescription: "This is help us page"
+        };
+    },
     name: "Help"
 };
 </script>
