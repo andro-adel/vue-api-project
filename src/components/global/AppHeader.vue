@@ -41,6 +41,7 @@ export default {
     ul {
         float: left;
         width: calc(100% - 200px);
+        margin: 0;
         li {
             padding: 20px;
             display: inline-block;
