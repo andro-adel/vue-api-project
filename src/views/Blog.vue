@@ -6,7 +6,16 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="posts-area">
-                        <post />
+                        <post
+                            v-for="post in posts"
+                            :key="post.id"
+                            :views="post.views"
+                            :title="post.title"
+                            :date="post.date"
+                            :content="post.content"
+                            :author="post.author"
+                            :category="post.category"
+                        />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -22,11 +31,13 @@
 <script>
 import post from "@/components/blog/blogpost.vue";
 import sidebar from "@/components/blog/blogsidebar.vue";
+import jsonposts from "../json/MOCK_DATA.json";
 export default {
     data: function() {
         return {
             pagename: "Blog",
-            pagedescription: "This is blog us page"
+            pagedescription: "This is blog us page",
+            posts: jsonposts
         };
     },
     name: "Blog",
