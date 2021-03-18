@@ -20,7 +20,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="sidebar">
-                        <sidebar />
+                        <sidebar
+                            v-for="title in titles"
+                            :key="title.id"
+                            :id="title.id"
+                            :title="title.title"
+                        />
                     </div>
                 </div>
             </div>
@@ -32,12 +37,14 @@
 import post from "@/components/blog/blogpost.vue";
 import sidebar from "@/components/blog/blogsidebar.vue";
 import jsonposts from "../json/MOCK_DATA.json";
+import jsontitles from "@/json/MOCK_DATA.json";
 export default {
     data: function() {
         return {
             pagename: "Blog",
             pagedescription: "This is blog us page",
-            posts: jsonposts
+            posts: jsonposts,
+            titles: jsontitles
         };
     },
     name: "Blog",
