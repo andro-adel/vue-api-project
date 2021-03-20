@@ -37,20 +37,27 @@
 import post from "@/components/blog/blogpost.vue";
 import sidebar from "@/components/blog/blogsidebar.vue";
 import jsonposts from "../json/MOCK_DATA.json";
-import jsontitles from "@/json/MOCK_DATA.json";
+import axios from "axios";
 export default {
+    name: "Blog",
+    components: {
+        post,
+        sidebar
+    },
     data: function() {
         return {
             pagename: "Blog",
             pagedescription: "This is blog us page",
             posts: jsonposts,
-            titles: jsontitles
+            titles: []
         };
     },
-    name: "Blog",
-    components: {
-        post,
-        sidebar
+    created() {
+        axios
+            .get(`https://jsonplaceholder.typicode.com/posts`)
+            .then(response => {
+                this.titles = response.data;
+            });
     }
 };
 </script>
