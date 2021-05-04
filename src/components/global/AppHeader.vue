@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="container">
-            <div class="logo">Elzero Vue</div>
+            <img alt="logo" src="../assets/Screenshot_1.png" />
             <ul class="text-right">
                 <li>
                     <router-link to="/" exact>
@@ -39,11 +39,9 @@ export default {
     background-color: #333;
     color: #fff;
     overflow: hidden;
-    .logo {
-        font-size: 24px;
-        padding: 20px;
+    img {
         float: left;
-        width: 200px;
+        height: 5rem;
     }
     ul {
         float: left;
