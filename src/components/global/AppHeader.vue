@@ -10,17 +10,22 @@
                 </li>
                 <li>
                     <router-link to="/blog">
-                        <a>Blog</a>
+                        <a>Sign-Up</a>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/about">
-                        <a>About</a>
+                        <a>Sign-In</a>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/help" replace>
-                        <a>Help</a>
+                        <a>Products</a>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/shop" replace>
+                        <a>Shopping Cart</a>
                     </router-link>
                 </li>
             </ul>
