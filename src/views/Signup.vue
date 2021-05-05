@@ -39,14 +39,14 @@ import sidebar from "@/components/blog/blogsidebar.vue";
 import jsonposts from "../json/MOCK_DATA.json";
 import axios from "axios";
 export default {
-    name: "Blog",
+    name: "Signup",
     components: {
         post,
         sidebar
     },
     data: function() {
         return {
-            pagename: "Blog",
+            pagename: "Signup",
             pagedescription: "This is blog us page",
             posts: jsonposts,
             titles: []

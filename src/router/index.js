@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
-import Help from "../views/Help.vue";
-import Blog from "../views/Blog.vue";
+import Signin from "../views/Signin.vue";
+import Products from "../views/Products.vue";
+import Signup from "../views/Signup.vue";
 import Shop from "../views/shop.vue";
 
 const routes = [
@@ -12,19 +12,19 @@ const routes = [
         component: Home
     },
     {
-        path: "/blog",
-        name: "Blog",
-        component: Blog
+        path: "/sign-up",
+        name: "Signup",
+        component: Signup
     },
     {
-        path: "/about",
-        name: "About",
-        component: About
+        path: "/sign-in",
+        name: "Signin",
+        component: Signin
     },
     {
-        path: "/help",
-        name: "Help",
-        component: Help
+        path: "/products",
+        name: "Products",
+        component: Products
     },
     {
         path: "/shop",

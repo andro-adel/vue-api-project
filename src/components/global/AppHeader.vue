@@ -9,17 +9,17 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/blog">
+                    <router-link to="/sign-up">
                         <a>Sign-Up</a>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/about">
+                    <router-link to="/sign-in">
                         <a>Sign-In</a>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/help" replace>
+                    <router-link to="/products" replace>
                         <a>Products</a>
                     </router-link>
                 </li>

@@ -9,10 +9,10 @@
 export default {
     data: function() {
         return {
-            pagename: "About Us",
+            pagename: "Signin",
             pagedescription: "This is about us page"
         };
     },
-    name: "About"
+    name: "Signin"
 };
 </script>
