@@ -1,4 +1,5 @@
 <template>
+<section>
     <div class="our-Products">
         <h1>{{ pagename }}</h1>
         <p>{{ pagedescription }}</p>
@@ -7,25 +8,12 @@
             <h3>{{post.name_en}}</h3>
             </div>
     </div>
-
-    <!-- <div>
-  <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-</div> -->
-<!-- <button class="btn btn primary">click</button> -->
+    <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">Left</button>
+  <button type="button" class="btn btn-primary">Middle</button>
+  <button type="button" class="btn btn-primary">Right</button>
+</div>
+</section>
 </template>
 
 <script>

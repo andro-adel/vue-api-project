@@ -11,8 +11,6 @@ import 'jquery/src/jquery.js';
 import 'popper.js/dist/popper.min.js';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import "./scss/main.scss";
-import "./css/main.css";
-
 
 
 createApp(App)
