@@ -6,7 +6,14 @@ import "bootstrap";
 import "jquery";
 import "popper.js";
 import "normalize.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'jquery/src/jquery.js';
+import 'popper.js/dist/popper.min.js';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 import "./scss/main.scss";
+import "./css/main.css";
+
+
 
 createApp(App)
     .use(store)

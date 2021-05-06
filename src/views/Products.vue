@@ -24,8 +24,8 @@
 
     <b-button href="#" variant="primary">Go somewhere</b-button>
   </b-card>
-</div>
-<button class="btn btn primary">click</button> -->
+</div> -->
+<!-- <button class="btn btn primary">click</button> -->
 </template>
 
 <script>
@@ -53,3 +53,5 @@ export default {
     }
 }
 </script>
+
+
