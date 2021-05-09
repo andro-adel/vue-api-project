@@ -4,29 +4,22 @@
         <p>{{ pagedescription }}</p>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <div class="posts-area">
-                        <post
-                            v-for="post in posts"
-                            :key="post.id"
-                            :views="post.views"
-                            :title="post.title"
-                            :date="post.date"
-                            :content="post.content"
-                            :author="post.author"
-                            :category="post.category"
-                        />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="sidebar">
-                        <sidebar
-                            v-for="title in titles"
-                            :key="title.id"
-                            :id="title.id"
-                            :title="title.title"
-                        />
-                    </div>
+                <div class="col-12">
+                    <form @submit.prevent="register" method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Username"  autocomplete="username" v-model="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email"  autocomplete="email" v-model="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password"  placeholder="Password"  autocomplete="new-password" v-model="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -34,30 +27,38 @@
 </template>
 
 <script>
-import post from "@/components/blog/blogpost.vue";
-import sidebar from "@/components/blog/blogsidebar.vue";
-import jsonposts from "../json/MOCK_DATA.json";
 import axios from "axios";
 export default {
     name: "Signup",
-    components: {
-        post,
-        sidebar
-    },
     data: function() {
         return {
             pagename: "Signup",
-            pagedescription: "This is blog us page",
-            posts: jsonposts,
-            titles: []
-        };
+            pagedescription: "This is Signup us page",
+                name: "",
+                email: "",
+                password: ""
+        }
     },
-    created() {
-        axios
-            .get(`https://jsonplaceholder.typicode.com/posts`)
-            .then(response => {
-                this.titles = response.data;
-            });
+
+    methods: {
+        register() {
+          var self = this;
+          axios.post( 'localhost:8000/api/register', {
+            name: self.name,
+            email: self.email,
+            password: self.password,
+          }).then(function (response) {
+            self.name = '';
+            self.email = '';
+            self.password = '';
+            console.log(response);
+            self.$router.push({ path: '/login' });
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+  
+        }
     }
 };
 </script>
