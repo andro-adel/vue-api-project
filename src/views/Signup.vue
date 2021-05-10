@@ -43,7 +43,7 @@ export default {
     methods: {
         register() {
           var self = this;
-          axios.post( 'localhost:8000/api/register', {
+          axios.post( 'http://localhost:8000/api/register', {
             name: self.name,
             email: self.email,
             password: self.password,
@@ -52,7 +52,7 @@ export default {
             self.email = '';
             self.password = '';
             console.log(response);
-            self.$router.push({ path: '/login' });
+            self.$router.push({ path: '/sign-in' });
           })
           .catch(function (error) {
             console.log(error);
@@ -60,5 +60,5 @@ export default {
   
         }
     }
-};
+}
 </script>
