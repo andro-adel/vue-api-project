@@ -3,22 +3,30 @@
     <div class="our-Products">
         <h1>{{ pagename }}</h1>
         <p>{{ pagedescription }}</p>
-        <div v-for="post in posts"
-            :key="post.id">
-            <h3>{{post.name_en}}</h3>
-            </div>
     </div>
+
     <div class="row col-12 mx-0 px-5 mt-5 mb-5 text-center">
-    <div class="card" style="width: 18rem;" v-for="image in images"
-            :key="image.id">
-  <img :src="photo+image.image" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+        <div class="card" style="width: 18rem;" v-for="post in posts"
+                :key="post.id">
+            <div v-for="image in post.images"
+                :key="image.id">
+                <img :src="photo+image.image" class="card-img-top">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.name_en}}</h5>
+                <p class="card-text">{{post.description_en}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
     </div>
-</div>
+     <div class="overflow-auto">
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
+  </div>
 </section>
 </template>
 
@@ -31,8 +39,9 @@ export default {
             pagename: "Products",
             pagedescription: "This is help us page",
             posts: [],
-            images: [],
-            photo: "http://127.0.0.1:8000/storage//"
+            photo: "http://127.0.0.1:8000/storage//",
+            currentPage: 1,
+            perPage: 3,
         };
     },
     
@@ -48,17 +57,11 @@ export default {
         })
     },
 
-    // mounted () {
-    //     var self = this;
-    //     axios.get('http://localhost:8000/api/photos')
-    //     .then(function(res) {
-    //         self.images = res.data;
-    //         console.log('Data: ',res.data);
-    //     })
-    //     .catch(function(error){
-    //         console.log('Errors: ',error);
-    //     })
-    // }
+    computed: {
+      rows() {
+        return this.posts.length
+      }
+    }
 }
 </script>
 
